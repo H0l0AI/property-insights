@@ -1,13 +1,12 @@
-// Start coding here
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './styles/main.css';
+import App from './containers/app';
 
-import got from 'got'
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
 
-const getProperties = async () => {
-    const properties = await got
-        .get('http://localhost:5000/properties/1')
-        .json()
-    console.log('properties', properties)
-    return properties
-}
-
-getProperties()
